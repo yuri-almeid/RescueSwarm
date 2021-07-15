@@ -23,4 +23,5 @@ jobs:
         if: github.event_name == 'pull_request'
         run: |
           echo just a just a pull request
+          ls
 
