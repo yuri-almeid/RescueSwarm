@@ -19,12 +19,13 @@ jobs:
         run: |
           echo just a push
           echo ${{ github.event.head_commit.message }}
-          echo commits[][message]
+          echo github.event.commits[][message]
+          echo github.event.commits[0][message]
       
       - name: run that commit
         if: github.event.head_commit.message == 'asd'
         run: |
-          echo commits[][message]
+
 
       
       - name: run a pull request
