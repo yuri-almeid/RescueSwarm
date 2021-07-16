@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - name: run a push
+      - name: Builder
         if: github.event_name == 'push'
         run: |
           echo test
