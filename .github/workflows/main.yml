@@ -22,7 +22,7 @@ jobs:
           git log -1 --format=%b
           echo $T
         env:
-          T: $(git log -1 --format=%s)
+          T: "$(git log -1 --format=%s)"
 
       
       
