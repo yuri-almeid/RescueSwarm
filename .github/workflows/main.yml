@@ -32,12 +32,14 @@ jobs:
               mkdir releases
             fi
             zip -r $TAG.zip . -x ".git/*" ".github/*"
-            echo --------------------
-            ls
-            echo --------------------
+            mv $TAG.zip releases/ 
+            ls 
+            ls releases/
+
           else
             echo "Not building..."
           fi
+        shell: bash
        
       - name: run that commit
         if: github.event.head_commit.message == 'asd'
