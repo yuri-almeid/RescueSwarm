@@ -41,9 +41,7 @@ jobs:
             git commit -m "📦 - Actions: Building"
             git push
             echo Dando merge no main
-            git checkout main
-            git merge prod
-            git push
+            git branch
             
           else
             echo "Not building..."
