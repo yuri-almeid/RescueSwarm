@@ -21,6 +21,8 @@ jobs:
           git log -1 --format=%s
           git log -1 --format=%b
           echo $T
+          export VAL="$(git log -1 --format=%b)"
+          echo $VAL
         env:
           T: "$(git log -1 --format=%s)"
 
