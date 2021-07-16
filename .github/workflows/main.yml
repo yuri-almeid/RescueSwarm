@@ -28,7 +28,7 @@ jobs:
             echo $NAME
             echo CommitTag:
             echo $TAG
-            zip releases/$TAG.zip main.py
+            zip -r releases/$TAG.zip main.py
             ls
             ls relaeses/
           else
