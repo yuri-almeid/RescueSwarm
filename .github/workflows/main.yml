@@ -23,11 +23,12 @@ jobs:
       - name: run that commit
         if: github.event.head_commit.message == 'asd'
         run: |
-          echo test 
-          export T="git log -1 --format=%s"
-          echo ${{ T }}
-          export ST="git log -1 --format=%b"
-          echo ${{ ST }}
+          echo test
+          echo $T
+          echo $ST
+        env:
+          T: git log -1 --format=%s
+          ST: git log -1 --format=%b
 
 
       
