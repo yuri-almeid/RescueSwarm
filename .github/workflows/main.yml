@@ -20,11 +20,16 @@ jobs:
           echo test
           export NAME="$(git log -1 --format=%s)"
           export TAG="$(git log -1 --format=%b)"
-          echo $NAME
-          echo $TAG
+          
           if [ $NAME = "build" ]
           then
-            echo "got right"
+            echo "Run Builder Deploy"
+            echo CommitName:
+            echo $NAME
+            echo CommitTag:
+            echo $TAG
+          else
+            echo "Not building..."
           fi
        
       - name: run that commit
