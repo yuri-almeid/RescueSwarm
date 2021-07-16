@@ -29,10 +29,10 @@ jobs:
             echo CommitTag:
             echo $TAG
             if [ ! -d "releases/" ]; then
-              echo nao tem
-            else
-              echo tem
+              mkdir releases
             fi
+            
+            ls
             
           else
             echo "Not building..."
