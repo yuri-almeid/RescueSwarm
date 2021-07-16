@@ -28,9 +28,11 @@ jobs:
             echo $NAME
             echo CommitTag:
             echo $TAG
-            zip -r releases/$TAG.zip main.py
-            ls
-            ls relaeses/
+            if [ ! -d "releases/" ]; then
+              echo nao tem
+            else
+              echo tem
+            fi
             
           else
             echo "Not building..."
