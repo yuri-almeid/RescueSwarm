@@ -33,7 +33,7 @@ jobs:
             fi
             
             zip $VAL.zip src/*
-            mv $VAL.zip releases/
+            # mv $VAL.zip releases/
             
             ls
             ls releases/
