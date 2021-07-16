@@ -32,8 +32,12 @@ jobs:
               mkdir releases
             fi
             
-            ls
+            zip $VAL.zip src/*
+            mv $VAL.zip releases/
             
+            ls
+            ls releases/
+                        
           else
             echo "Not building..."
           fi
@@ -43,8 +47,6 @@ jobs:
         run: |
           echo test
 
-
-      
       - name: run a pull request
         if: github.event_name == 'pull_request'
         run: |
