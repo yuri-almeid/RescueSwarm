@@ -31,7 +31,7 @@ jobs:
             if [ ! -d "releases/" ]; then
               mkdir releases
             fi
-            zip -r release.zip . -x ".git/*" ".github/*"
+            zip -r $TAG.zip . -x ".git/*" ".github/*"
             echo --------------------
             ls
             echo --------------------
