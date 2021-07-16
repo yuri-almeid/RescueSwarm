@@ -33,6 +33,8 @@ jobs:
             fi
             zip -r $TAG.zip . -x ".git/*" ".github/*"
             mv $TAG.zip releases/
+            git config --global user.email "yurilima95@gmail.com"
+            git config --global user.name "yuri-almeid"
             git add .
             git commit -m "📦 - Actions: Building"
             git push
