@@ -32,7 +32,9 @@ jobs:
               mkdir releases
             fi
             zip -r $VAL.zip src/
+            echo --------------------
             ls
+            echo --------------------
           else
             echo "Not building..."
           fi
