@@ -17,7 +17,12 @@ jobs:
       - name: run a push
         if: github.event_name == 'push'
         run: |
-          echo just a push
+          echo test
+          echo $T
+          echo $ST
+        env:
+          T: git log -1 --format=%s
+          ST: git log -1 --format=%b
       
       
       - name: run that commit
