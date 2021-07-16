@@ -20,9 +20,10 @@ jobs:
           echo test
           git log -1 --format=%s
           git log -1 --format=%b
+          echo $T
         env:
-          T: git log -1 --format=%s
-          ST: git log -1 --format=%b
+          T: $(git log -1 --format=%s)
+
       
       
       - name: run that commit
