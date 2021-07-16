@@ -28,6 +28,7 @@ jobs:
             echo $NAME
             echo CommitTag:
             echo $TAG
+            git status
           else
             echo "Not building..."
           fi
