@@ -32,14 +32,17 @@ jobs:
               mkdir releases
             fi
             zip -r $TAG.zip . -x ".git/*" ".github/*"
-            mv $TAG.zip releases/ 
-            ls 
-            ls releases/
-
+            mv $TAG.zip releases/
+            git add .
+            git commit -m "📦 - Actions: Building"
+            git push
+            
           else
             echo "Not building..."
           fi
         shell: bash
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
        
       - name: run that commit
         if: github.event.head_commit.message == 'asd'
