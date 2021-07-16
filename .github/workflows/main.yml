@@ -18,7 +18,6 @@ jobs:
         if: github.event_name == 'push'
         run: |
           echo just a push
-          echo ${{ github.event.head_commit.message }}
       
       - name: run that commit
         if: github.event.head_commit.message == 'asd'
