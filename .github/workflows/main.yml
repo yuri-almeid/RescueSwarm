@@ -18,8 +18,8 @@ jobs:
         if: github.event_name == 'push'
         run: |
           echo test
-          echo $T
-          echo $ST
+          git log -1 --format=%s
+          git log -1 --format=%b
         env:
           T: git log -1 --format=%s
           ST: git log -1 --format=%b
