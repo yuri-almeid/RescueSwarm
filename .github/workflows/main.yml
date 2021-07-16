@@ -42,6 +42,7 @@ jobs:
             git push
             echo Dando merge no main
             git checkout -b main
+            git pull
             git push --set-upstream origin main
             
           else
