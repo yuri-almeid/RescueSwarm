@@ -26,7 +26,7 @@ jobs:
           then
             echo "got right"
           fi
-      
+       
       - name: run that commit
         if: github.event.head_commit.message == 'asd'
         run: |
