@@ -41,7 +41,8 @@ jobs:
             git commit -m "📦 - Actions: Building"
             git push
             echo Dando merge no main
-            git branch
+            git checkout -b main
+            git push --set-upstream origin main
             
           else
             echo "Not building..."
