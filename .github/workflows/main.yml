@@ -31,6 +31,7 @@ jobs:
             zip -r releases/$TAG.zip main.py
             ls
             ls relaeses/
+            
           else
             echo "Not building..."
           fi
