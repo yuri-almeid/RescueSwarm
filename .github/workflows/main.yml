@@ -22,22 +22,15 @@ jobs:
           export TAG="$(git log -1 --format=%b)"
           echo $NAME
           echo $TAG
-
-      
-      - name: Check
-        if: $NAME == 'teste'
-        run: |
-          echo ok
+          if [ $NAME = "build" ]
+          then
+            echo "got right"
+          fi
       
       - name: run that commit
         if: github.event.head_commit.message == 'asd'
         run: |
           echo test
-          echo $T
-          echo $ST
-        env:
-          T: git log -1 --format=%s
-          ST: git log -1 --format=%b
 
 
       
