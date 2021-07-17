@@ -34,7 +34,7 @@ jobs:
               mkdir releases
             fi
             echo Criando pacote
-            zip -r $TAG.zip . -x ".git/*" ".github/*"
+            zip -r $TAG.zip . -x ".git/*" ".github/*" "releases/"
             mv $TAG.zip releases/
             echo Atualizando github
             git config --global user.email "yurilima95@gmail.com"
