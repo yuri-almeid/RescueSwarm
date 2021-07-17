@@ -25,9 +25,10 @@ jobs:
           export TAG="$(git log -1 --format=%b)"
           git clone https://github.com/yuri-almeid/RescueSwarm.git
           
-          ls
+
           cd RescueSwarm/
           ls
+          git branch
           
           if [ $NAME = "b" ]
           then
