@@ -43,7 +43,7 @@ jobs:
             git commit -m "📦 - Actions: Building"
             git push
             echo Dando merge no main
-            git branch
+            git branch -r
             
           else
             echo "Not building..."
