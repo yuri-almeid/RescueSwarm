@@ -13,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       
       - name: Builder
         if: github.event_name == 'push'
@@ -41,9 +43,7 @@ jobs:
             git commit -m "📦 - Actions: Building"
             git push
             echo Dando merge no main
-            git checkout -b main
-            git pull origin main
-            git push --set-upstream origin main
+            git branch
             
           else
             echo "Not building..."
