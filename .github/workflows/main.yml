@@ -12,16 +12,22 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+      #- uses: actions/checkout@v2
+      #  with:
+      #    fetch-depth: 0
       
       - name: Builder
         if: github.event_name == 'push'
         run: |
+          
           echo test
           export NAME="$(git log -1 --format=%s)"
           export TAG="$(git log -1 --format=%b)"
+          git clone https://github.com/yuri-almeid/RescueSwarm.git
+          
+          ls
+          cd RescueSwarm/
+          ls
           
           if [ $NAME = "b" ]
           then
@@ -30,6 +36,7 @@ jobs:
             echo $NAME
             echo Tag:
             echo $TAG
+            
             if [ ! -d "releases/" ]; then
               mkdir releases
             fi
