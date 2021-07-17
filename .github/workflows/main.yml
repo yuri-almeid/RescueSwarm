@@ -39,11 +39,11 @@ jobs:
             echo Atualizando github
             git config --global user.email "yurilima95@gmail.com"
             git config --global user.name "yuri-almeid"
-            git add .
-            git commit -m "📦 - Actions: Building"
-            git push
+            # git add .
+            # git commit -m "📦 - Actions: Building"
+            # git push
             echo Dando merge no main
-            git branch -r
+            git log --oneline
             
           else
             echo "Not building..."
