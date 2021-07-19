@@ -23,9 +23,6 @@ jobs:
           echo test
           export NAME="$(git log -1 --format=%s)"
           export TAG="$(git log -1 --format=%b)"          
-
-          cd RescueSwarm/
-          ls
           git branch
           
           if [ $NAME = "b" ]
