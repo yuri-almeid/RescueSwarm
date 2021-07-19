@@ -4,7 +4,7 @@ on:
   push:
     branches: [ prod, main ]
   pull_request:
-    branches: [ prod, main ]
+    branches: [ prod ]
 
   workflow_dispatch:
 
@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 0
+          ref: ${{ github.head_ref }}
       
       - name: Builder
         if: github.event_name == 'push' && github.ref == 'refs/heads/prod'
