@@ -2,9 +2,9 @@ name: Testing CI
 
 on:
   push:
-    branches: [ prod ]
+    branches: [ prod, main ]
   pull_request:
-    branches: [ prod ]
+    branches: [ prod, main ]
 
   workflow_dispatch:
 
@@ -12,19 +12,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      #- uses: actions/checkout@v2
-      #  with:
-      #    fetch-depth: 0
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       
       - name: Builder
-        if: github.event_name == 'push'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/prod'
         run: |
           
           echo test
           export NAME="$(git log -1 --format=%s)"
-          export TAG="$(git log -1 --format=%b)"
-          git clone https://github.com/yuri-almeid/RescueSwarm.git
-          
+          export TAG="$(git log -1 --format=%b)"          
 
           cd RescueSwarm/
           ls
@@ -51,7 +49,7 @@ jobs:
             # git commit -m "📦 - Actions: Building"
             # git push
             echo Dando merge no main
-            git log --oneline
+            
             
           else
             echo "Not building..."
